@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import './index.css'
-import profilePhoto from './assets/images/ProfilePhoto.jpg'
+import profilePhoto from './assets/images/ProfilePhoto.JPG'
 import project1 from './assets/images/project1.png'
 import project2 from './assets/images/project2.png'
 import project3 from './assets/images/project3.png'

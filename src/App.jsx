@@ -225,7 +225,7 @@ function AboutSection() {
         </p>
 
         <p className="mb-6">
-          <span className="font-medium">Things I enjoy:</span> Chilling with friends, Changing my music taste, Skateboarding, Cooking, Horror movies, Getting good at new things
+          <span className="font-medium">Things I enjoy:</span> Chilling with friends, Changing my music taste, Skateboarding, Cooking, Horror movies, Getting good at new things, Playing chess (poorly)
         </p>
 
         <p className="mb-6">

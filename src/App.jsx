@@ -13,11 +13,11 @@ function App() {
   const projects = [
     {
       id: 1,
-      title: 'Racetrack Fuzzy Logic',
-      category: 'Game AI',
-      description: 'A racing game that uses fuzzy logic for AI drivers.',
+      title: 'LastFM Song Recommender',
+      category: 'Machine Learning',
+      description: 'A music recommendation app using Last.fm data and ML to suggest tracks based on your listening history.',
       image: project1,
-      link: 'https://github.com/pf48724/GameAIRaceTrack'
+      link: 'https://github.com/pf48724/lastfm-recommendations'
     },
     {
       id: 2,

@@ -15,17 +15,17 @@ function App() {
       id: 1,
       title: 'LastFM Song Recommender',
       category: 'Machine Learning',
-      description: 'A music recommendation app using Last.fm data and ML to suggest tracks based on your listening history.',
+      description: 'Music recommender that blends Last.fm data with tag-based vector embeddings and k-NN search for personalized track suggestions.',
       image: project1,
       link: 'https://github.com/pf48724/lastfm-recommendations'
     },
     {
-      id: 2,
-      title: 'S&P Predictor',
-      category: 'Data Science',
-      description: 'Utilizes Machine Learning algorithms to predict stock prices.',
+      id: 3,
+      title: 'Pattern Learning RPS',
+      category: 'AI Game Development',
+      description: 'A rock paper scissors opponent that learns from your moves using markov chains and pattern recognition',
       image: project2,
-      link: 'https://github.com/pf48724/sp500-predictor'
+      link: 'https://github.com/pf48724/rps'
     },
     {
       id: 3,

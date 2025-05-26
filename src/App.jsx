@@ -33,7 +33,7 @@ function App() {
       category: 'UI/UX Design',
       description: 'This ChatBot loves you',
       image: project3,
-      link: 'https://chatbotlove.netlify.app/'
+      link: 'https://github.com/pf48724/chatbot'
     },
     {
       id: 4,

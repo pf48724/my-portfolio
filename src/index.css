@@ -17,23 +17,129 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  cursor: default;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .section-divider {
-  @apply border-t border-gray-200 my-8;
+  border-top-width: 1px;
+  border-color: #e5e7eb;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply tracking-tight;
+  letter-spacing: -0.025em;
 }
 
 .section-title {
-  @apply text-xl font-bold mb-4 tracking-tight;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+}
+
+.project-card {
+  background-color: white;
+  border: 1px solid #f3f4f6;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.project-image {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-content {
+  padding: 1.25rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.project-category {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  color: #2563eb;
+}
+
+.project-link:hover {
+  color: #1d4ed8;
+}
+
+.social-links a {
+  transition-property: color;
+  transition-duration: 200ms;
+}
+
+.social-links a:hover {
+  color: #2563eb;
+}
+
+.nav-link {
+  position: relative;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  transition-property: color;
+  transition-duration: 200ms;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.125rem;
+  background-color: black;
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active::after {
+  width: 100%;
 }
 
 .hover-lift {
-  @apply transition-transform duration-200;
+  transition-property: all;
+  transition-duration: 200ms;
 }
 .hover-lift:hover {
-  @apply -translate-y-0.5;
+  transform: translateY(-0.125rem);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 ::-webkit-scrollbar {
@@ -60,8 +166,9 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #000;
   text-decoration: inherit;
+  transition: all 0.2s ease;
 }
 a:hover {
   color: #535bf2;

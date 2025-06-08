@@ -34,7 +34,7 @@ function App() {
     {
       id: 3,
       title: 'Pattern Learning RPS',
-      category: 'AI Game Development',
+      category: 'Game AI Development',
       description: 'A rock paper scissors opponent that learns from your moves using markov chains and pattern recognition',
       image: project2,
       link: 'https://github.com/pf48724/rps'

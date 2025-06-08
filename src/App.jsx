@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './index.css'
-import DraggableTag from './DraggableTag'
 import profilePhoto from './assets/images/ProfilePhoto.JPG'
 import project1 from './assets/images/project1.png'
 import project2 from './assets/images/project2.png'
@@ -288,12 +287,6 @@ function WorkSection({ projects }) {
 }
 
 function AboutSection() {
-  const exploringContainerRef = useRef(null);
-  const enjoyContainerRef = useRef(null);
-  const booksContainerRef = useRef(null);
-  const moviesContainerRef = useRef(null);
-  const gamesContainerRef = useRef(null);
-  const tvShowsContainerRef = useRef(null);
   return (
     <div className="flex flex-col md:flex-row h-[calc(100vh-80px)]">
       <div className="w-full md:w-1/3 pr-0 md:pr-6 mb-8 md:mb-0 overflow-y-auto h-[calc(100vh-120px)]">
@@ -337,14 +330,14 @@ function AboutSection() {
         >
           <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-100 hover-lift">
             <h3 className="font-medium mb-2">Things I'm exploring right now:</h3>
-            <p ref={exploringContainerRef} className="text-gray-700 leading-relaxed relative min-h-[120px]">
-              <DraggableTag id="backend-dev" className="bg-blue-50" index={0}>Backend development</DraggableTag>
-              <DraggableTag id="machine-learning" className="bg-green-50" index={1}>Machine Learning</DraggableTag>
-              <DraggableTag id="fullstack" className="bg-purple-50" index={2}>Full stack development</DraggableTag>
-              <DraggableTag id="data-science" className="bg-yellow-50" index={3}>Data Science</DraggableTag>
-              <DraggableTag id="hci" className="bg-pink-50" index={4}>Human Computer Interaction</DraggableTag>
-              <DraggableTag id="frontend" className="bg-orange-50" index={5}>Frontend development</DraggableTag>
-            </p>
+            <div className="flex flex-wrap gap-2 min-h-[120px]">
+              <span className="inline-block px-2 py-1 bg-blue-50 rounded border border-gray-200 shadow-sm">Backend development</span>
+              <span className="inline-block px-2 py-1 bg-green-50 rounded border border-gray-200 shadow-sm">Machine Learning</span>
+              <span className="inline-block px-2 py-1 bg-purple-50 rounded border border-gray-200 shadow-sm">Full stack development</span>
+              <span className="inline-block px-2 py-1 bg-yellow-50 rounded border border-gray-200 shadow-sm">Data Science</span>
+              <span className="inline-block px-2 py-1 bg-pink-50 rounded border border-gray-200 shadow-sm">Human Computer Interaction</span>
+              <span className="inline-block px-2 py-1 bg-orange-50 rounded border border-gray-200 shadow-sm">Frontend development</span>
+            </div>
           </div>
         </motion.div>
 
@@ -355,18 +348,18 @@ function AboutSection() {
         >
           <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-100 hover-lift">
             <h3 className="font-medium mb-2">Things I enjoy:</h3>
-            <p ref={enjoyContainerRef} className="text-gray-700 leading-relaxed relative min-h-[220px]">
-              <DraggableTag id="friends" className="bg-green-50" index={0}>Hanging out with friends</DraggableTag>
-              <DraggableTag id="music" className="bg-blue-50" index={1}>Changing my music taste</DraggableTag>
-              <DraggableTag id="skateboarding" className="bg-yellow-50" index={2}>Skateboarding</DraggableTag>
-              <DraggableTag id="cooking" className="bg-red-50" index={3}>Cooking</DraggableTag>
-              <DraggableTag id="horror" className="bg-purple-50" index={4}>Horror movies</DraggableTag>
-              <DraggableTag id="learning" className="bg-indigo-50" index={5}>Getting good at new things</DraggableTag>
-              <DraggableTag id="chess" className="bg-orange-50" index={6}>Playing chess (poorly)</DraggableTag>
-              <DraggableTag id="drums" className="bg-teal-50" index={7}>Playing the drums</DraggableTag>
-              <DraggableTag id="new-restaurants" className="bg-pink-50" index={8}>Eating at new places</DraggableTag>
-              <DraggableTag id="new-recipes" className="bg-amber-50" index={9}>Cooking new things</DraggableTag>
-            </p>
+            <div className="flex flex-wrap gap-2 min-h-[220px]">
+              <span className="inline-block px-2 py-1 bg-green-50 rounded border border-gray-200 shadow-sm">Hanging out with friends</span>
+              <span className="inline-block px-2 py-1 bg-blue-50 rounded border border-gray-200 shadow-sm">Changing my music taste</span>
+              <span className="inline-block px-2 py-1 bg-yellow-50 rounded border border-gray-200 shadow-sm">Skateboarding</span>
+              <span className="inline-block px-2 py-1 bg-red-50 rounded border border-gray-200 shadow-sm">Cooking</span>
+              <span className="inline-block px-2 py-1 bg-purple-50 rounded border border-gray-200 shadow-sm">Horror movies</span>
+              <span className="inline-block px-2 py-1 bg-indigo-50 rounded border border-gray-200 shadow-sm">Getting good at new things</span>
+              <span className="inline-block px-2 py-1 bg-orange-50 rounded border border-gray-200 shadow-sm">Playing chess (poorly)</span>
+              <span className="inline-block px-2 py-1 bg-teal-50 rounded border border-gray-200 shadow-sm">Playing the drums</span>
+              <span className="inline-block px-2 py-1 bg-pink-50 rounded border border-gray-200 shadow-sm">Eating at new places</span>
+              <span className="inline-block px-2 py-1 bg-amber-50 rounded border border-gray-200 shadow-sm">Cooking new things</span>
+            </div>
           </div>
         </motion.div>
 
@@ -380,50 +373,50 @@ function AboutSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover-lift">
               <h4 className="font-bold mb-2">Books</h4>
-              <p ref={booksContainerRef} className="text-gray-700 relative min-h-[120px]">
-                <DraggableTag id="things-fall-apart" className="bg-indigo-50 italic" index={0}>Things Fall Apart</DraggableTag>
-                <DraggableTag id="dune" className="bg-indigo-50 italic" index={1}>God Emperor of Dune</DraggableTag>
-                <DraggableTag id="unfortunate-events" className="bg-indigo-50 italic" index={2}>A Series of Unfortunate Events: The End</DraggableTag>
-                <DraggableTag id="all-tomorrows" className="bg-indigo-50 italic" index={3}>All Tomorrows</DraggableTag>
-              </p>
+              <div className="flex flex-wrap gap-2 min-h-[120px]">
+                <span className="inline-block px-2 py-1 bg-indigo-50 italic rounded border border-gray-200 shadow-sm">Things Fall Apart</span>
+                <span className="inline-block px-2 py-1 bg-indigo-50 italic rounded border border-gray-200 shadow-sm">God Emperor of Dune</span>
+                <span className="inline-block px-2 py-1 bg-indigo-50 italic rounded border border-gray-200 shadow-sm">A Series of Unfortunate Events: The End</span>
+                <span className="inline-block px-2 py-1 bg-indigo-50 italic rounded border border-gray-200 shadow-sm">All Tomorrows</span>
+              </div>
             </div>
             <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover-lift">
               <h4 className="font-bold mb-2">Movies</h4>
-              <p ref={moviesContainerRef} className="text-gray-700 relative min-h-[180px]">
-                <DraggableTag id="akira" className="bg-red-50 italic" index={0}>Akira</DraggableTag>
-                <DraggableTag id="eeao" className="bg-red-50 italic" index={1}>EEAO</DraggableTag>
-                <DraggableTag id="parasite" className="bg-red-50 italic" index={2}>Parasite</DraggableTag>
-                <DraggableTag id="kill-bill" className="bg-red-50 italic" index={3}>Kill Bill 1 & 2</DraggableTag>
-                <DraggableTag id="spirited-away" className="bg-red-50 italic" index={4}>Spirited Away</DraggableTag>
-                <DraggableTag id="eternal-sunshine" className="bg-red-50 italic" index={5}>Eternal Sunshine of the Spotless Mind</DraggableTag>
-                <DraggableTag id="us" className="bg-red-50 italic" index={6}>Us</DraggableTag>
-                <DraggableTag id="inglorious-basterds" className="bg-red-50 italic" index={7}>Inglorious Basterds</DraggableTag>
-              </p>
+              <div className="flex flex-wrap gap-2 min-h-[180px]">
+                <span className="inline-block px-2 py-1 bg-red-50 italic rounded border border-gray-200 shadow-sm">Akira</span>
+                <span className="inline-block px-2 py-1 bg-red-50 italic rounded border border-gray-200 shadow-sm">EEAO</span>
+                <span className="inline-block px-2 py-1 bg-red-50 italic rounded border border-gray-200 shadow-sm">Parasite</span>
+                <span className="inline-block px-2 py-1 bg-red-50 italic rounded border border-gray-200 shadow-sm">Kill Bill 1 & 2</span>
+                <span className="inline-block px-2 py-1 bg-red-50 italic rounded border border-gray-200 shadow-sm">Spirited Away</span>
+                <span className="inline-block px-2 py-1 bg-red-50 italic rounded border border-gray-200 shadow-sm">Eternal Sunshine of the Spotless Mind</span>
+                <span className="inline-block px-2 py-1 bg-red-50 italic rounded border border-gray-200 shadow-sm">Us</span>
+                <span className="inline-block px-2 py-1 bg-red-50 italic rounded border border-gray-200 shadow-sm">Inglorious Basterds</span>
+              </div>
             </div>
             <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover-lift">
               <h4 className="font-bold mb-2">Games</h4>
-              <p ref={gamesContainerRef} className="text-gray-700 relative min-h-[180px]">
-                <DraggableTag id="last-of-us" className="bg-green-50 italic" index={0}>The Last of Us</DraggableTag>
-                <DraggableTag id="bioshock" className="bg-green-50 italic" index={1}>Bioshock 2</DraggableTag>
-                <DraggableTag id="hades" className="bg-green-50 italic" index={2}>Hades</DraggableTag>
-                <DraggableTag id="etg" className="bg-green-50 italic" index={3}>EtG</DraggableTag>
-                <DraggableTag id="catan" className="bg-green-50 italic" index={4}>Catan</DraggableTag>
-                <DraggableTag id="slay-the-spire" className="bg-green-50 italic" index={5}>Slay the Spire</DraggableTag>
-                <DraggableTag id="darkest-dungeon" className="bg-green-50 italic" index={6}>Darkest Dungeon</DraggableTag>
-                <DraggableTag id="astroneer" className="bg-green-50 italic" index={7}>Astroneer</DraggableTag>
-                <DraggableTag id="furi" className="bg-green-50 italic" index={8}>Furi</DraggableTag>
-                <DraggableTag id="have-nice-death" className="bg-green-50 italic" index={9}>Have a Nice Death</DraggableTag>
-              </p>
+              <div className="flex flex-wrap gap-2 min-h-[180px]">
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">The Last of Us</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">Bioshock 2</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">Hades</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">EtG</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">Catan</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">Slay the Spire</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">Darkest Dungeon</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">Astroneer</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">Furi</span>
+                <span className="inline-block px-2 py-1 bg-green-50 italic rounded border border-gray-200 shadow-sm">Have a Nice Death</span>
+              </div>
             </div>
             <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover-lift">
               <h4 className="font-bold mb-2">TV Shows</h4>
-              <p ref={tvShowsContainerRef} className="text-gray-700 relative min-h-[120px]">
-                <DraggableTag id="breaking-bad" className="bg-blue-50 italic" index={0}>Breaking Bad</DraggableTag>
-                <DraggableTag id="snowfall" className="bg-blue-50 italic" index={1}>Snowfall</DraggableTag>
-                <DraggableTag id="atla" className="bg-blue-50 italic" index={2}>ATLA</DraggableTag>
-                <DraggableTag id="dexter" className="bg-blue-50 italic" index={3}>Dexter</DraggableTag>
-                <DraggableTag id="invincible" className="bg-blue-50 italic" index={4}>Invincible</DraggableTag>
-              </p>
+              <div className="flex flex-wrap gap-2 min-h-[120px]">
+                <span className="inline-block px-2 py-1 bg-blue-50 italic rounded border border-gray-200 shadow-sm">Breaking Bad</span>
+                <span className="inline-block px-2 py-1 bg-blue-50 italic rounded border border-gray-200 shadow-sm">Snowfall</span>
+                <span className="inline-block px-2 py-1 bg-blue-50 italic rounded border border-gray-200 shadow-sm">ATLA</span>
+                <span className="inline-block px-2 py-1 bg-blue-50 italic rounded border border-gray-200 shadow-sm">Dexter</span>
+                <span className="inline-block px-2 py-1 bg-blue-50 italic rounded border border-gray-200 shadow-sm">Invincible</span>
+              </div>
             </div>
           </div>
         </motion.div>
